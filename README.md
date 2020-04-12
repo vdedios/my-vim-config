@@ -1,4 +1,4 @@
-# A complete vim config ready to use!
+# A complete vim config ready to use!
 
 ### This config features:
 
