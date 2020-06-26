@@ -3,4 +3,4 @@
 ### This config features:
 
 - Modified color version of Night Forest vim theme: https://github.com/sainnhe/forest-night
-- Custom vim commands for a quick workflow such as editing or window management
+- Custom vim commands for a quick workflow focused on editing and window management
