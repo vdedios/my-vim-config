@@ -1,4 +1,4 @@
-# My portable vim config ready to use in any distribution!
+# A portable and simple vim config ready to use in any distribution!
 
 ### This config features:
 

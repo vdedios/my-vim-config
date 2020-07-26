@@ -3,6 +3,7 @@
 syntax on
 set number
 set cursorline
+set nocompatible
 inoremap jj <ESC>
 inoremap { {<CR>}<Esc>ko
 inoremap <  <><ESC>hli
@@ -56,11 +57,4 @@ set viminfo='1000
 ""set autoindent                       
 set wildmenu                          
 set autoread                         
-
-if (expand('%t') == ".myvimrc")
-    set foldmethod=marker
-else
-    set foldmethod=indent
-endif
-"Debugging options
-set verbosefile=~/.vim/vimdebug.txt
+set foldmethod=indent
