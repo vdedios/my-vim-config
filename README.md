@@ -27,7 +27,7 @@ sudo make install
 ```
 **NOTE II** On Windows Subsystem Linux you will have problems with clipboard portability. In order to solve this you will have to install a X11 server and set `clipboard=unnamedplus` option on vimrc. Here you have two good sources to set up everything:
 [guide1](https://gist.github.com/necojackarc/02c3c81e1525bb5dc3561f378e921541)
-[Named Link](https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2 "guide2")
+[guide2](https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2)
 
 #### Step TWO: Getting colors and vimrc.
 - Clone this repo on a temp folder (this repo can be deleted at the end of installation).
@@ -38,12 +38,12 @@ sudo make install
 **NOTE** You will notice that there are two different versions of `vimrc` files. One of them, the `vimrc_simple` file is a light configuration for quick usecases where you won't need any plugins. In case you want to go with this config your trip ends here, you won't need to install anything else.
 
 #### Step THREE: Getting a cool font.
-- Now, for further completing the [Named Link](https://github.com/sainnhe/forest-night "night-forest theme") we will install you will need to get a [Named Link](https://github.com/ryanoasis/nerd-fonts "Nerd Font"). My personal taste in this case is going for the `Jet Brains Mono` font-family. I recommend you to downloading the package directly from the [Named Link](https://github.com/ryanoasis/nerd-fonts/releases/tag/v2.1.0 "latest release section").
+- Now, for further completing the [night-forest theme](https://github.com/sainnhe/forest-night) we will install you will need to get a [Nerd Font](https://github.com/ryanoasis/nerd-fonts). My personal taste in this case is going for the `Jet Brains Mono` font-family. I recommend you to downloading the package directly from the [latest release section](https://github.com/ryanoasis/nerd-fonts/releases/tag/v2.1.0).
 - Once you have your font, you must add it to your OS (look in your OS settings options). Then you will have to make your terminal yo use that particular font. Look for the name your OS has stored it with.
 - As a personal recommendation, in order to assure everything has been imported correctly, I recommend you to test in VIM's normal mode: `echo "\ue62b"`. If you see a VIM's V it means all have been configured correctly :thumbsup:.
 
 #### Step FOUR: Getting the pluggins.
-- Install `Vim-Plug` manager as indicated in their [Named Link](https://github.com/junegunn/vim-plug "source repo"). 
+- Install `Vim-Plug` manager as indicated in their [source repo](https://github.com/junegunn/vim-plug). 
 - Inside vim, execute `PlugInstall` to install all pluggings. Wait until everything has been installed, exit VIM and enter again.
 
 #### Step FOUR: Customizing your own plugins.
