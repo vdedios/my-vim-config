@@ -26,7 +26,7 @@ sudo make
 sudo make install
 ```
 **NOTE II** On Windows Subsystem Linux you will have problems with clipboard portability. In order to solve this you will have to install a X11 server and set `clipboard=unnamedplus` option on vimrc. Here you have two good sources to set up everything:
-[Named Link](https://gist.github.com/necojackarc/02c3c81e1525bb5dc3561f378e921541 "guide1")
+[guide1](https://gist.github.com/necojackarc/02c3c81e1525bb5dc3561f378e921541)
 [Named Link](https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2 "guide2")
 
 #### Step TWO: Getting colors and vimrc.
