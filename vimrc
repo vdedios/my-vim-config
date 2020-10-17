@@ -29,6 +29,7 @@
 	Plug 'Shougo/denite.nvim'
 	Plug 'roxma/nvim-yarp'
 	Plug 'roxma/vim-hug-neovim-rpc'
+	Plug 'voldikss/vim-floaterm'
 	
 	call plug#end()
 "}}}
@@ -51,9 +52,22 @@
 
 	" Added set
 	set termguicolors                       
+
+	" Tabs
+	"NormiTabs
+	""set tabstop=4
+	""set shiftwidth=4
+	""set noexpandtab
 	set tabstop=2
-	set expandtab
 	set shiftwidth=2
+	set expandtab
+
+	"Better search
+	set ignorecase
+	set smartcase
+	set incsearch
+	set showmatch
+	set hlsearch
 	set smartindent                        
 	set hlsearch                            
 	set undofile                           
@@ -398,6 +412,8 @@
 		catch
 		  echo 'Denite not installed. It should work after running :PlugInstall'
 		endtry
+	"Flaterm configs
+		let g:floaterm_wintype = 'popup'
 "}}}
 
 syntax on
@@ -409,3 +425,7 @@ augroup lightlineCustom
     autocmd!
     autocmd BufWritePost * call lightline#update()
 augroup END
+
+"Prevent backups when editing system files
+au BufWrite /private/tmp/crontab.* set nowritebackup
+au BufWrite /private/etc/pw.* set nowritebackup
