@@ -297,41 +297,41 @@
 	              \ 'tabnum': 'tab_num'
 	              \ }
 	  let g:lightline.component = {
-	              \ 'artify_gitbranch' : '%{artify_gitbranch()}',
-	              \ 'artify_mode': '%{artify_lightline_mode()}',
-	              \ 'artify_lineinfo': "%2{artify_line_percent()}\uf295 %3{artify_line_num()}:%-2{artify_col_num()}",
+	              \ 'artify_gitbranch' : '%{Artify_gitbranch()}',
+	              \ 'artify_mode': '%{Artify_lightline_mode()}',
+	              \ 'artify_lineinfo': "%2{Artify_line_percent()}\uf295 %3{Artify_line_num()}:%-2{Artify_col_num()}",
 	              \ 'bufinfo': '%{bufname("%")}:%{bufnr("%")}',
 	              \ 'vim_logo': "\ue7c5",
-	              \ 'pomodoro': '%{pomodorostatus()}',
+	              \ 'pomodoro': '%{PomodoroStatus()}',
 	              \ 'mode': '%{lightline#mode()}',
-	              \ 'absolutepath': '%f',
+	              \ 'absolutepath': '%F',
 	              \ 'relativepath': '%f',
 	              \ 'filename': '%t',
-	              \ 'filesize': "%{humansize(line2byte('$') + len(getline('$')))}",
+	              \ 'filesize': "%{HumanSize(line2byte('$') + len(getline('$')))}",
 	              \ 'fileencoding': '%{&fenc!=#""?&fenc:&enc}',
 	              \ 'fileformat': '%{&fenc!=#""?&fenc:&enc}[%{&ff}]',
 	              \ 'filetype': '%{&ft!=#""?&ft:"no ft"}',
-	              \ 'modified': '%m',
+	              \ 'modified': '%M',
 	              \ 'bufnum': '%n',
-	              \ 'paste': '%{&paste?"paste":""}',
-	              \ 'readonly': '%r',
+	              \ 'paste': '%{&paste?"PASTE":""}',
+	              \ 'readonly': '%R',
 	              \ 'charvalue': '%b',
-	              \ 'charvaluehex': '%b',
+	              \ 'charvaluehex': '%B',
 	              \ 'percent': '%2p%%',
-	              \ 'percentwin': '%p',
+	              \ 'percentwin': '%P',
 	              \ 'spell': '%{&spell?&spelllang:""}',
 	              \ 'lineinfo': '%2p%% %3l:%-2v',
 	              \ 'line': '%l',
 	              \ 'column': '%c',
-	              \ 'close': '%999x x ',
+	              \ 'close': '%999X X ',
 	              \ 'winnr': '%{winnr()}'
 	              \ }
 	  let g:lightline.component_function = {
-	              \ 'gitbranch': 'gitbranch',
-	              \ 'devicons_filetype': 'devicons_filetype',
-	              \ 'devicons_fileformat': 'devicons_fileformat',
+	              \ 'gitbranch': 'Gitbranch',
+	              \ 'devicons_filetype': 'Devicons_Filetype',
+	              \ 'devicons_fileformat': 'Devicons_Fileformat',
 	              \ 'coc_status': 'coc#status',
-	              \ 'coc_currentfunction': 'coccurrentfunction'
+	              \ 'coc_currentfunction': 'CocCurrentFunction'
 	              \ }
 	  let g:lightline.component_expand = {
 	              \ 'linter_checking': 'lightline#ale#checking',
@@ -344,7 +344,7 @@
 	              \ 'linter_warnings': 'warning',
 	              \ 'linter_errors': 'error'
 	              \ }
-	  
+	
 	"Pomodoro config
 		" Duration of a pomodoro in minutes (default: 25)
 		let g:pomodoro_time_work = 52
