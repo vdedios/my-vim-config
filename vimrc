@@ -259,7 +259,7 @@
 
   "" lightline
 	  let g:lightline = {}
-	  let g:lightline.colorscheme = 'forest_night'
+	  let g:lightline.colorscheme = 'forest-night'
 	  ""let g:lightline.colorscheme = 'solarized'
 	  let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be" }
 	  let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
