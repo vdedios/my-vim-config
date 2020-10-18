@@ -97,33 +97,38 @@
 "}}}
 
 "--- Mappings ---{{{
-	inoremap jj <ESC>
-	inoremap { {}<Esc>i
-	inoremap <  <><ESC>hli
-	inoremap "  ""<ESC>hli
-	inoremap '  ''<ESC>hli
-	inoremap [  []<ESC>hli
-	inoremap (  ()<ESC>hli
-	nnoremap :w :wa
-	nnoremap :%y + :yy
-	map <C-l> gt
-	map <C-h> gT
-	map  r <C-r>
-	map <D-k> h
-	map <D-K> h
-	map <A-k> h
-	map <A-K> h
-	" Split window mapping
-	if bufwinnr(1)
-		map H <C-W>h
-		map J <C-W>j
-		map K <C-W>k
-		map L <C-W>l
-		map * <C-W>>
-		map _ <C-W><
-		map + <C-W>+
-		map - <C-W>-
-	endif
+  " === Basic mappings === "
+	  inoremap jj <ESC>
+	  inoremap { {}<Esc>i
+	  inoremap <  <><ESC>hli
+	  inoremap "  ""<ESC>hli
+	  inoremap '  ''<ESC>hli
+	  inoremap [  []<ESC>hli
+	  inoremap (  ()<ESC>hli
+	  nnoremap :w :wa
+	  nnoremap :%y + :yy
+	  map <C-l> gt
+	  map <C-h> gT
+	  map  r <C-r>
+	  map <D-k> h
+	  map <D-K> h
+	  map <A-k> h
+	  map <A-K> h
+	  " Split window mapping
+	  if bufwinnr(1)
+	  	map H <C-W>h
+	  	map J <C-W>j
+	  	map K <C-W>k
+	  	map L <C-W>l
+	  	map * <C-W>>
+	  	map _ <C-W><
+	  	map + <C-W>+
+	  	map - <C-W>-
+	  endif
+
+    " Avoid upper/lower case
+    vnoremap u y
+    vnoremap U y
 
 	" === Denite shorcuts === "
 	  "   ;         - Browser currently open buffers
