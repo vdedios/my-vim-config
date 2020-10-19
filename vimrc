@@ -34,6 +34,7 @@ set nocompatible              " be iMproved, required
 "}}}
 
 "--- Variable set ---{{{
+  set pyxversion=3
 	set backspace=indent,eol,start
 	set number
 	set cursorline
@@ -115,6 +116,11 @@ set nocompatible              " be iMproved, required
 	  map <A-k> h
 	  map <A-K> h
 
+    " Exit/save mappings
+    nnoremap <leader>w :wa<CR>
+    nnoremap <leader>q :q!<CR>
+    nnoremap <leader><Esc> :qa!<CR>
+
 	  " Split window mapping
 	  if bufwinnr(1)
 	  	map H <C-W>h
@@ -195,7 +201,7 @@ set nocompatible              " be iMproved, required
     " File Explorer
     nnoremap <leader>n :FloatermNew<CR>
     tnoremap <leader>t :FloatermToggle<CR>
-    tnoremap <leader>q :FloatermKill!<CR>
+    ""tnoremap <leader>q :FloatermKill!<CR>
     nnoremap <leader>s :FloatermNew spt<CR>
     nnoremap <leader>f :FloatermNew lf<CR>
     nnoremap <leader>e :FloatermNew fzf<CR>
@@ -309,7 +315,7 @@ set nocompatible              " be iMproved, required
 	              \ 'filename': 'lightline#tab#filename',
 	              \ 'modified': 'lightline#tab#modified',
 	              \ 'readonly': 'lightline#tab#readonly',
-	              \ 'tabnum': 'tab_num'
+	              \ 'tabnum': 'Tab_num'
 	              \ }
 	  let g:lightline.component = {
 	              \ 'artify_gitbranch' : '%{Artify_gitbranch()}',
@@ -435,7 +441,7 @@ set nocompatible              " be iMproved, required
 
 	"Floaterm configs
 		let g:floaterm_wintype = 'popup'
-    let g:floaterm_keymap_kill = '<leader>q'
+    let g:floaterm_keymap_kill = '<leader>x'
     let g:floaterm_keymap_toggle = '<leader>t'
     let g:floaterm_keymap_new = '<leader>n'
 
@@ -443,6 +449,7 @@ set nocompatible              " be iMproved, required
     let g:floaterm_keymap_next = '<C-k>'
     ""let g:floaterm_keymap_hide = '<C-m>'
     ""let g:floaterm_keymap_show = '<C-n>'
+    
 "}}}
 
 syntax on
