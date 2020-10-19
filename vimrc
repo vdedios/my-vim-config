@@ -14,28 +14,26 @@
 "        'V/'   ++++++
 "                 ++	BY VDEDIOS.
 "
+set nocompatible              " be iMproved, required
 
 "--- Plugings list ---{{{
 	call plug#begin('~/.vim/autoload')
 	
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'itchyny/lightline.vim'
 	Plug 'itchyny/vim-gitbranch'
 	Plug 'rmolin88/pomodoro.vim'
 	Plug 'ryanoasis/vim-devicons'
-	Plug 'neoclide/coc.nvim'
 	Plug 'sainnhe/forest-night'
-	Plug 'Shougo/denite.nvim'
 	Plug 'roxma/nvim-yarp'
 	Plug 'roxma/vim-hug-neovim-rpc'
+	Plug 'Shougo/denite.nvim'
 	Plug 'voldikss/vim-floaterm'
-  Plug 'altercation/vim-colors-solarized'
 	
 	call plug#end()
 "}}}
 
 "--- Variable set ---{{{
-	set nocompatible              " be iMproved, required
 	set backspace=indent,eol,start
 	set number
 	set cursorline
@@ -51,20 +49,20 @@
 
 	" Tabs
 	  "NormiTabs
-	  ""set tabstop=4
-	  ""set shiftwidth=4
-	  ""set noexpandtab
+	    ""set tabstop=4
+	    ""set shiftwidth=4
+	    ""set noexpandtab
 	  set tabstop=2
 	  set shiftwidth=2
 	  set expandtab
 
 	"Better search
-	  ""set ignorecase
-	  ""set smartcase
-	  ""set incsearch
-	  ""set showmatch
-	  ""set smartindent                        
-	  ""set hlsearch                            
+	  set ignorecase
+	  set smartcase
+	  set incsearch
+	  set showmatch
+	  set smartindent                        
+	  set hlsearch                            
 
 	set undofile                           
 	set undodir=$HOME/.cache/vim/undo     
@@ -97,7 +95,9 @@
 "}}}
 
 "--- Mappings ---{{{
-  " === Basic mappings === "
+  "=== Set the leader === "
+    let mapleader = " "
+  " === Basic mapping === "
 	  inoremap jj <ESC>
 	  inoremap { {}<Esc>i
 	  inoremap <  <><ESC>hli
@@ -114,21 +114,22 @@
 	  map <D-K> h
 	  map <A-k> h
 	  map <A-K> h
+
 	  " Split window mapping
 	  if bufwinnr(1)
 	  	map H <C-W>h
 	  	map J <C-W>j
 	  	map K <C-W>k
 	  	map L <C-W>l
-	  	map * <C-W>>
+	  	""map * <C-W>>
 	  	map _ <C-W><
 	  	map + <C-W>+
 	  	map - <C-W>-
 	  endif
 
-    " Avoid upper/lower case
-    vnoremap u y
-    vnoremap U y
+    " Delete upper/lower case
+    vnoremap u <Nop>
+    vnoremap U <Nop>
 
 	" === Denite shorcuts === "
 	  "   ;         - Browser currently open buffers
@@ -137,8 +138,8 @@
 	  "   <leader>j - Search current directory for occurences of word under cursor
 	  nmap ; :Denite buffer<CR>
 	  nmap , :DeniteProjectDir file/rec<CR>i
-	  nnoremap <C-k> :<C-u>Denite grep:. -no-empty<CR>
-	  nnoremap <C-j> :<C-u>DeniteCursorWord grep:.<CR>
+	  nnoremap <Leader>k :<C-u>Denite grep:. -no-empty<CR>
+	  nnoremap <Leader>j :<C-u>DeniteCursorWord grep:.<CR>
 	  
 	  " Define mappings while in 'filter' mode
 	  "   <C-o>         - Switch to normal mode inside of search results
@@ -192,10 +193,19 @@
 
   " === Floaterm shortcuts === 
     " File Explorer
-    nnoremap f :FloatermNew lf<CR>
-    nnoremap t :FloatermNew<CR>
-    nnoremap <C-s> :FloatermNew spt<CR>
+    nnoremap <leader>n :FloatermNew<CR>
+    tnoremap <leader>t :FloatermToggle<CR>
+    tnoremap <leader>q :FloatermKill!<CR>
+    nnoremap <leader>s :FloatermNew spt<CR>
+    nnoremap <leader>f :FloatermNew lf<CR>
+    nnoremap <leader>e :FloatermNew fzf<CR>
+    tnoremap <leader>s <C-\><C-N>
+    tnoremap <C-j> :FloatermPrev
+    tnoremap <C-k> :FloatermNext
     "":FloatermPrev or :FloatermNext
+    
+  "=== Tabs/pane shortcuts === "
+    nnoremap <leader>v :vs<CR>
 "}}}
 
 "--- functions ---{{{
@@ -259,7 +269,7 @@
 
   "" lightline
 	  let g:lightline = {}
-	  let g:lightline.colorscheme = 'forest-night'
+	  let g:lightline.colorscheme = 'forest_night'
 	  ""let g:lightline.colorscheme = 'solarized'
 	  let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be" }
 	  let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
@@ -399,15 +409,15 @@
 		"
 		
 		let s:denite_options = {
-		      \ 'prompt' : '>',
-		      \ 'split': 'floating',
-		      \ 'start_filter': 1,
-		      \ 'auto_resize': 1,
-		      \ 'source_names': 'short',
-		      \ 'direction': 'botright',
-		      \ 'highlight_filter_background': 'CursorLine',
-		      \ 'highlight_matched_char': 'Type',
-		      \ }
+		  \ 'prompt' : '>',
+		  \ 'split': 'popup',
+		  \ 'start_filter': 1,
+		  \ 'auto_resize': 1,
+		  \ 'source_names': 'short',
+		  \ 'direction': 'botright',
+		  \ 'highlight_filter_background': 'CursorLine',
+		  \ 'highlight_matched_char': 'Type',
+		  \ }
 
 		" Loop through denite options and enable them
 		function! s:profile(opts) abort
@@ -425,22 +435,21 @@
 
 	"Floaterm configs
 		let g:floaterm_wintype = 'popup'
-    let g:floaterm_keymap_kill = '<Esc>'
-    let g:floaterm_keymap_toggle = '<C-t>'
-    let g:floaterm_keymap_new = '<C-n>'
+    let g:floaterm_keymap_kill = '<leader>q'
+    let g:floaterm_keymap_toggle = '<leader>t'
+    let g:floaterm_keymap_new = '<leader>n'
 
-    let g:floaterm_keymap_prev = '<C-k>'
-    let g:floaterm_keymap_next = '<C-j>'
+    let g:floaterm_keymap_prev = '<C-j>'
+    let g:floaterm_keymap_next = '<C-k>'
     ""let g:floaterm_keymap_hide = '<C-m>'
     ""let g:floaterm_keymap_show = '<C-n>'
 "}}}
 
 syntax on
 colorscheme forest-night
-""syntax enable
+syntax on
+""colorscheme solarized8
 ""set background=light
-""colorscheme solarized
-
 filetype off                 " required
 filetype plugin indent on    " required
 
