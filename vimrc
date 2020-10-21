@@ -96,6 +96,9 @@ set nocompatible              " be iMproved, required
 "}}}
 
 "--- Mappings ---{{{
+  "" NOTE: Al basic VIM/Denite mappings in normal mode use <leader>mapping whereas
+  "terminal mappings use Ctrl as leader
+  
   "=== Set the leader === "
     let mapleader = " "
   " === Basic mapping === "
@@ -127,8 +130,8 @@ set nocompatible              " be iMproved, required
 	  	map J <C-W>j
 	  	map K <C-W>k
 	  	map L <C-W>l
-	  	""map * <C-W>>
-	  	map _ <C-W><
+	  	map <Leader>+ <C-W>>
+	  	map <Leader>- <C-W><
 	  	map + <C-W>+
 	  	map - <C-W>-
 	  endif
@@ -137,7 +140,7 @@ set nocompatible              " be iMproved, required
     vnoremap u <Nop>
     vnoremap U <Nop>
 
-	" === Denite shorcuts === "
+	" === Denite mappings === "
 	  "   ;         - Browser currently open buffers
 	  "   <leader>t - Browse list of files in current directory
 	  "   <leader>g - Search current directory for occurences of given term and close window if no results
@@ -197,15 +200,15 @@ set nocompatible              " be iMproved, required
 	    \ denite#do_map('do_action', 'split')
 	  endfunction
 
-  " === Floaterm shortcuts === 
+  " === Floaterm mappings === 
     " File Explorer
-    nnoremap <leader>n :FloatermNew<CR>
-    tnoremap <leader>t :FloatermToggle<CR>
+    nnoremap <C-n> :FloatermNew<CR>
+    tnoremap <C-t> :FloatermToggle<CR>
     ""tnoremap <leader>q :FloatermKill!<CR>
-    nnoremap <leader>s :FloatermNew spt<CR>
-    nnoremap <leader>f :FloatermNew lf<CR>
-    nnoremap <leader>e :FloatermNew fzf<CR>
-    tnoremap <leader>s <C-\><C-N>
+    nnoremap <C-s> :FloatermNew spt<CR>
+    nnoremap <C-f> :FloatermNew lf<CR>
+    nnoremap <C-e> :FloatermNew fzf<CR>
+    tnoremap <C-s> <C-\><C-N>
     tnoremap <C-j> :FloatermPrev
     tnoremap <C-k> :FloatermNext
     "":FloatermPrev or :FloatermNext
@@ -441,9 +444,9 @@ set nocompatible              " be iMproved, required
 
 	"Floaterm configs
 		let g:floaterm_wintype = 'popup'
-    let g:floaterm_keymap_kill = '<leader>x'
-    let g:floaterm_keymap_toggle = '<leader>t'
-    let g:floaterm_keymap_new = '<leader>n'
+    let g:floaterm_keymap_kill = '<C-x>'
+    let g:floaterm_keymap_toggle = '<C-t>'
+    let g:floaterm_keymap_new = '<C-n>'
 
     let g:floaterm_keymap_prev = '<C-j>'
     let g:floaterm_keymap_next = '<C-k>'
